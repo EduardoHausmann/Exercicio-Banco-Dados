@@ -42,6 +42,7 @@
             this.btnPeixes.TabIndex = 0;
             this.btnPeixes.Text = "Peixes";
             this.btnPeixes.UseVisualStyleBackColor = true;
+            this.btnPeixes.Click += new System.EventHandler(this.btnPeixes_Click);
             // 
             // btnColaboradores
             // 
@@ -52,6 +53,7 @@
             this.btnColaboradores.TabIndex = 1;
             this.btnColaboradores.Text = "Colaboradores";
             this.btnColaboradores.UseVisualStyleBackColor = true;
+            this.btnColaboradores.Click += new System.EventHandler(this.btnColaboradores_Click);
             // 
             // btnClientes
             // 
@@ -62,6 +64,7 @@
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // frmPrincipal
             // 
