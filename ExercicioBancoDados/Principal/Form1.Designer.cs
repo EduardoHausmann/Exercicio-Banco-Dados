@@ -36,7 +36,7 @@
             // btnPeixes
             // 
             this.btnPeixes.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPeixes.Location = new System.Drawing.Point(30, 60);
+            this.btnPeixes.Location = new System.Drawing.Point(30, 53);
             this.btnPeixes.Name = "btnPeixes";
             this.btnPeixes.Size = new System.Drawing.Size(154, 58);
             this.btnPeixes.TabIndex = 0;
@@ -46,7 +46,7 @@
             // btnColaboradores
             // 
             this.btnColaboradores.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColaboradores.Location = new System.Drawing.Point(236, 60);
+            this.btnColaboradores.Location = new System.Drawing.Point(236, 53);
             this.btnColaboradores.Name = "btnColaboradores";
             this.btnColaboradores.Size = new System.Drawing.Size(154, 58);
             this.btnColaboradores.TabIndex = 1;
@@ -56,7 +56,7 @@
             // btnClientes
             // 
             this.btnClientes.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Location = new System.Drawing.Point(442, 60);
+            this.btnClientes.Location = new System.Drawing.Point(442, 53);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(154, 58);
             this.btnClientes.TabIndex = 2;
