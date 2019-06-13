@@ -156,6 +156,33 @@ namespace Principal
                 AtualizarTabela();
             }
         }
+
+        private void dgvPeixes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(dgvPeixes.CurrentRow.Cells[0].Value); 
+
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "SELECT id, nome, raca, preco, quantidade FROM peixes WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            DataRow linha = tabela.Rows[0];
+            Peixe peixe = new Peixe();
+            peixe.Id = Convert.ToInt32(linha["id"]);
+            peixe.Nome = linha["nome"].ToString();
+            peixe.Raca = linha["raca"].ToString();
+            peixe.Preco = Convert.ToDecimal(linha["preco"]);
+            peixe.Quantidade = Convert.ToInt32(linha["quantidade"]);
+
+            lblId.Text = peixe.Id.ToString();
+            txtNome.Text = peixe.Nome;
+        }
     }
 }
 

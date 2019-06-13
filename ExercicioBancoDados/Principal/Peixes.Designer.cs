@@ -171,8 +171,10 @@
             this.dgvPeixes.Location = new System.Drawing.Point(183, 67);
             this.dgvPeixes.Name = "dgvPeixes";
             this.dgvPeixes.ReadOnly = true;
+            this.dgvPeixes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPeixes.Size = new System.Drawing.Size(443, 325);
             this.dgvPeixes.TabIndex = 11;
+            this.dgvPeixes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeixes_CellDoubleClick);
             // 
             // ColumnId
             // 
