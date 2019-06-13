@@ -40,14 +40,14 @@
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPeixes = new System.Windows.Forms.DataGridView();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeixes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -152,6 +152,7 @@
             this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnApagar
             // 
@@ -163,22 +164,23 @@
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPeixes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPeixes.AllowUserToAddRows = false;
+            this.dgvPeixes.AllowUserToDeleteRows = false;
+            this.dgvPeixes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPeixes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeixes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
             this.ColumnNome,
             this.ColumnRaca,
             this.ColumnPreco,
             this.ColumnQuantidade});
-            this.dataGridView1.Location = new System.Drawing.Point(183, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 325);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvPeixes.Location = new System.Drawing.Point(183, 67);
+            this.dgvPeixes.Name = "dgvPeixes";
+            this.dgvPeixes.ReadOnly = true;
+            this.dgvPeixes.Size = new System.Drawing.Size(443, 325);
+            this.dgvPeixes.TabIndex = 11;
             // 
             // ColumnId
             // 
@@ -217,8 +219,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 407);
-            this.Controls.Add(this.dataGridView1);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(632, 400);
+            this.Controls.Add(this.dgvPeixes);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.nudQuantidade);
@@ -234,7 +237,7 @@
             this.Name = "frmPeixes";
             this.Text = "Peixes";
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeixes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,7 +257,7 @@
         private System.Windows.Forms.NumericUpDown nudQuantidade;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnApagar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPeixes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRaca;
