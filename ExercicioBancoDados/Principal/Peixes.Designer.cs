@@ -37,7 +37,6 @@
             this.lblPreco = new System.Windows.Forms.Label();
             this.mtbPreco = new System.Windows.Forms.MaskedTextBox();
             this.lblQuantidade = new System.Windows.Forms.Label();
-            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
             this.dgvPeixes = new System.Windows.Forms.DataGridView();
@@ -46,7 +45,7 @@
             this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeixes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,14 +134,6 @@
             this.lblQuantidade.TabIndex = 8;
             this.lblQuantidade.Text = "Quantidade";
             // 
-            // nudQuantidade
-            // 
-            this.nudQuantidade.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudQuantidade.Location = new System.Drawing.Point(12, 275);
-            this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(164, 29);
-            this.nudQuantidade.TabIndex = 9;
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,16 +206,24 @@
             this.ColumnQuantidade.ReadOnly = true;
             this.ColumnQuantidade.Width = 75;
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidade.Location = new System.Drawing.Point(12, 275);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(164, 29);
+            this.txtQuantidade.TabIndex = 12;
+            // 
             // frmPeixes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(632, 400);
+            this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.dgvPeixes);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.nudQuantidade);
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.mtbPreco);
             this.Controls.Add(this.lblPreco);
@@ -236,7 +235,6 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmPeixes";
             this.Text = "Peixes";
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeixes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,7 +252,6 @@
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.MaskedTextBox mtbPreco;
         private System.Windows.Forms.Label lblQuantidade;
-        private System.Windows.Forms.NumericUpDown nudQuantidade;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.DataGridView dgvPeixes;
@@ -263,5 +260,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRaca;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
+        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }
