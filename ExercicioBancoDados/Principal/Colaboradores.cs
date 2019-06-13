@@ -169,5 +169,44 @@ namespace Principal
                     colaborador.Cpf,colaborador.Sexo, colaborador.Salario.ToString(), colaborador.Programador});
             }
         }
+
+        private void frmColaboradores_Load(object sender, EventArgs e)
+        {
+            AtualizarTabela();
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            if (dgvColaboradores.Rows.Count == 0)
+            {
+                MessageBox.Show("Registre um Colaborador");
+                return; 
+            }
+
+            DialogResult caixaDialogo = MessageBox.Show("Desejá realmente Apagar", "AVISO", MessageBoxButtons.YesNo);
+
+            if (caixaDialogo == DialogResult.Yes)
+            {
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.Open();
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "DELETE FROM colaboradores WHERE id = @ID";
+
+                int id = Convert.ToInt32(dgvColaboradores.CurrentRow.Cells[0].Value);
+                comando.Parameters.AddWithValue("@ID", id);
+                comando.ExecuteNonQuery();
+
+                conexao.Close();
+                AtualizarTabela();
+            }
+        }
+
+        private void dgvColaboradores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

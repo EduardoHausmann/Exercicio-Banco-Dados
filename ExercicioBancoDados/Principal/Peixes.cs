@@ -148,7 +148,7 @@ namespace Principal
                 comando.CommandText = "DELETE FROM peixes WHERE id = @ID";
 
                 int id = Convert.ToInt32(dgvPeixes.CurrentRow.Cells[0].Value);
-                comando.Parameters.AddWithValue("@ID", id);
+                comando.Parameters.Add("@ID", id);
                 comando.ExecuteNonQuery();
 
                 conexao.Close();

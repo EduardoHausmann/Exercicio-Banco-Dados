@@ -197,8 +197,10 @@
             this.dgvColaboradores.Location = new System.Drawing.Point(202, 54);
             this.dgvColaboradores.Name = "dgvColaboradores";
             this.dgvColaboradores.ReadOnly = true;
+            this.dgvColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvColaboradores.Size = new System.Drawing.Size(645, 356);
             this.dgvColaboradores.TabIndex = 14;
+            this.dgvColaboradores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColaboradores_CellDoubleClick);
             // 
             // ColumnId
             // 
@@ -265,6 +267,7 @@
             this.btnApagar.TabIndex = 16;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // rbMasculino
             // 
@@ -316,6 +319,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmColaboradores";
             this.Text = "Colaboradores";
+            this.Load += new System.EventHandler(this.frmColaboradores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
