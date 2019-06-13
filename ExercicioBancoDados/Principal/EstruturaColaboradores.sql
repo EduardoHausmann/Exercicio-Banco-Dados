@@ -1,4 +1,5 @@
-﻿CREATE TABLE colaboradores(
+﻿DROP TABLE colaboradores;
+CREATE TABLE colaboradores(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
 	cpf CHAR(14),
@@ -7,3 +8,5 @@
 	cargo VARCHAR(45),
 	programador BIT
 );
+
+SELECT * FROM colaboradores;

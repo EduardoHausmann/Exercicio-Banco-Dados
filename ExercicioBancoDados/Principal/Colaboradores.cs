@@ -16,5 +16,22 @@ namespace Principal
         {
             InitializeComponent();
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (lblId.Text == "0")
+            {
+                Inserir();
+            }
+            else
+            {
+                Alterar();
+            }
+        }
+
+        private void Inserir()
+        {
+            Colaborador colaborador = new Colaborador();
+        }
     }
 }

@@ -11,3 +11,16 @@ C:\Users\Eduardo\Documents\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Prin
 C:\Users\Eduardo\Documents\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
 C:\Users\Eduardo\Documents\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.exe
 C:\Users\Eduardo\Documents\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.pdb
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\bin\Debug\Principal.exe.config
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\bin\Debug\Principal.exe
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\bin\Debug\Principal.pdb
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.frmClientes.resources
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.frmColaboradores.resources
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.frmPrincipal.resources
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.frmPeixes.resources
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.Properties.Resources.resources
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.exe
+T:\Documentos\GitHub\Exercicio-Banco-Dados\ExercicioBancoDados\Principal\obj\Debug\Principal.pdb

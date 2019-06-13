@@ -99,8 +99,18 @@
             // 
             // cbRaca
             // 
+            this.cbRaca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRaca.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRaca.FormattingEnabled = true;
+            this.cbRaca.Items.AddRange(new object[] {
+            "Tilapia",
+            "Carpa",
+            "Dourado",
+            "Salmão",
+            "Espada",
+            "Robalo",
+            "Baiacu",
+            "Palhaço"});
             this.cbRaca.Location = new System.Drawing.Point(12, 135);
             this.cbRaca.Name = "cbRaca";
             this.cbRaca.Size = new System.Drawing.Size(165, 29);
