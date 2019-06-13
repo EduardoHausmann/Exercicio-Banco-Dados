@@ -160,10 +160,10 @@ namespace Principal
                 Colaborador colaborador = new Colaborador();
                 colaborador.Id = Convert.ToInt32(linha["id"]);
                 colaborador.Nome = linha["nome"].ToString();
-                colaborador.Cargo = linha["cargo"].ToString();
                 colaborador.Cpf = linha["cpf"].ToString();
-                colaborador.Sexo = linha["sexo"].ToString();
                 colaborador.Salario = Convert.ToDecimal(linha["salario"]);
+                colaborador.Sexo = linha["sexo"].ToString();
+                colaborador.Cargo = linha["cargo"].ToString();
                 colaborador.Programador = linha["programador"].ToString();
                 dgvColaboradores.Rows.Add(new string[] { colaborador.Id.ToString(), colaborador.Nome, colaborador.Cargo,
                     colaborador.Cpf,colaborador.Sexo, colaborador.Salario.ToString(), colaborador.Programador});
@@ -206,7 +206,13 @@ namespace Principal
 
         private void dgvColaboradores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.Open();
 
+            SqlCommand comando = new SqlCommand();
+
+            conexao.Close();
         }
     }
 }
