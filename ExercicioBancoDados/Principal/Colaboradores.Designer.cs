@@ -37,7 +37,6 @@
             this.lblSalario = new System.Windows.Forms.Label();
             this.mtbSalario = new System.Windows.Forms.MaskedTextBox();
             this.lblSexo = new System.Windows.Forms.Label();
-            this.txtSexo = new System.Windows.Forms.TextBox();
             this.lblCargo = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.ckbProgramador = new System.Windows.Forms.CheckBox();
@@ -52,6 +51,8 @@
             this.ColumnProgramador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rbFeminino = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,14 +139,6 @@
             this.lblSexo.Size = new System.Drawing.Size(48, 21);
             this.lblSexo.TabIndex = 8;
             this.lblSexo.Text = "Sexo";
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSexo.Location = new System.Drawing.Point(12, 276);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(181, 29);
-            this.txtSexo.TabIndex = 9;
             // 
             // lblCargo
             // 
@@ -273,12 +266,38 @@
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
             // 
+            // rbMasculino
+            // 
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMasculino.Location = new System.Drawing.Point(12, 276);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(105, 25);
+            this.rbMasculino.TabIndex = 17;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
+            // 
+            // rbFeminino
+            // 
+            this.rbFeminino.AutoSize = true;
+            this.rbFeminino.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFeminino.Location = new System.Drawing.Point(12, 299);
+            this.rbFeminino.Name = "rbFeminino";
+            this.rbFeminino.Size = new System.Drawing.Size(97, 25);
+            this.rbFeminino.TabIndex = 18;
+            this.rbFeminino.TabStop = true;
+            this.rbFeminino.Text = "Feminino";
+            this.rbFeminino.UseVisualStyleBackColor = true;
+            // 
             // frmColaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(850, 416);
+            this.Controls.Add(this.rbFeminino);
+            this.Controls.Add(this.rbMasculino);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dgvColaboradores);
@@ -286,7 +305,6 @@
             this.Controls.Add(this.ckbProgramador);
             this.Controls.Add(this.txtCargo);
             this.Controls.Add(this.lblCargo);
-            this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.mtbSalario);
             this.Controls.Add(this.lblSalario);
@@ -315,7 +333,6 @@
         private System.Windows.Forms.Label lblSalario;
         private System.Windows.Forms.MaskedTextBox mtbSalario;
         private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.CheckBox ckbProgramador;
@@ -330,5 +347,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProgramador;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.RadioButton rbFeminino;
     }
 }

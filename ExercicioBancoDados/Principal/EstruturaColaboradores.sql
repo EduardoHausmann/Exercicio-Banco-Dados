@@ -6,7 +6,7 @@ CREATE TABLE colaboradores(
 	salario DECIMAL(8,2),
 	sexo VARCHAR(10),
 	cargo VARCHAR(45),
-	programador BIT
+	programador VARCHAR(30)
 );
 
 SELECT * FROM colaboradores;

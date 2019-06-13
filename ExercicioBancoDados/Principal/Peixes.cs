@@ -79,10 +79,9 @@ namespace Principal
             comando.Parameters.AddWithValue("@PRECO", peixe.Preco);
             comando.Parameters.AddWithValue("@QUANTIDADE", peixe.Quantidade);
             comando.ExecuteNonQuery();
+            LimparCampos();
             conexao.Close();
             AtualizarTabela();
-            LimparCampos();
-
         }
 
         private void LimparCampos()
