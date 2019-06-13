@@ -154,6 +154,7 @@
             this.btnApagar.TabIndex = 10;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // dgvPeixes
             // 
@@ -235,6 +236,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmPeixes";
             this.Text = "Peixes";
+            this.Load += new System.EventHandler(this.frmPeixes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeixes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

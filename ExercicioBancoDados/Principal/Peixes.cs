@@ -99,6 +99,63 @@ namespace Principal
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "SELECT id, nome, raca, preco, quantidade FROM peixes";
+
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+
+            dgvPeixes.RowCount = 0;
+            for (int i = 0; i < tabela.Rows.Count; i++)
+            {
+                DataRow linha = tabela.Rows[i];
+                Peixe peixe = new Peixe();
+                peixe.Id = Convert.ToInt32(linha["id"]);
+                peixe.Nome = linha["nome"].ToString();
+                peixe.Raca = linha["raca"].ToString();
+                peixe.Preco = Convert.ToDecimal(linha["preco"]);
+                peixe.Quantidade = Convert.ToInt32(linha["quantidade"]);
+                dgvPeixes.Rows.Add(new string[] {
+                    peixe.Id.ToString(), peixe.Nome, peixe.Raca, peixe.Preco.ToString(), peixe.Quantidade.ToString()});
+            }
+        }
+
+        private void frmPeixes_Load(object sender, EventArgs e)
+        {
+            AtualizarTabela();
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            if (dgvPeixes.Rows.Count == 0)
+            {
+                MessageBox.Show("Registre um Peixe");
+                return;
+            }
+
+
+            DialogResult caixaDialogo = MessageBox.Show("Desejá realmente Apagar?", "AVISO", MessageBoxButtons.YesNo);
+
+            if (caixaDialogo == DialogResult.Yes)
+            {
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.Open();
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "DELETE FROM peixes WHERE id = @ID";
+
+                int id = Convert.ToInt32(dgvPeixes.CurrentRow.Cells[0].Value);
+                comando.Parameters.Add("@ID", id);
+                comando.ExecuteNonQuery();
+
+                conexao.Close();
+                AtualizarTabela();
+            }
         }
     }
 }
+
