@@ -79,11 +79,12 @@ namespace Principal
             comando.Parameters.AddWithValue("@PRECO", peixe.Preco);
             comando.Parameters.AddWithValue("@QUANTIDADE", peixe.Quantidade);
             comando.ExecuteNonQuery();
+
             LimparCampos();
             conexao.Close();
             AtualizarTabela();
         }
-
+        
         private void LimparCampos()
         {
             lblId.Text = "0";
@@ -148,7 +149,7 @@ namespace Principal
                 comando.CommandText = "DELETE FROM peixes WHERE id = @ID";
 
                 int id = Convert.ToInt32(dgvPeixes.CurrentRow.Cells[0].Value);
-                comando.Parameters.Add("@ID", id);
+                comando.Parameters.AddWithValue("@ID", id);
                 comando.ExecuteNonQuery();
 
                 conexao.Close();
@@ -189,4 +190,3 @@ namespace Principal
         }
     }
 }
-

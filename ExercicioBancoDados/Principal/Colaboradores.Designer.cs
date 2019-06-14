@@ -28,19 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblSalario = new System.Windows.Forms.Label();
             this.mtbSalario = new System.Windows.Forms.MaskedTextBox();
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.ckbProgramador = new System.Windows.Forms.CheckBox();
-            this.lblId = new System.Windows.Forms.Label();
             this.dgvColaboradores = new System.Windows.Forms.DataGridView();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,18 +50,10 @@
             this.btnApagar = new System.Windows.Forms.Button();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
+            this.lblId = new System.Windows.Forms.Label();
+            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // lblCodigo
             // 
@@ -103,14 +92,6 @@
             this.lblCpf.Size = new System.Drawing.Size(45, 21);
             this.lblCpf.TabIndex = 4;
             this.lblCpf.Text = "CPF";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpf.Location = new System.Drawing.Point(12, 145);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(184, 29);
-            this.txtCpf.TabIndex = 5;
             // 
             // lblSalario
             // 
@@ -168,16 +149,6 @@
             this.ckbProgramador.TabIndex = 12;
             this.ckbProgramador.Text = "Programador";
             this.ckbProgramador.UseVisualStyleBackColor = true;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(89, 9);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(19, 21);
-            this.lblId.TabIndex = 13;
-            this.lblId.Text = "0";
             // 
             // dgvColaboradores
             // 
@@ -293,30 +264,48 @@
             this.rbFeminino.Text = "Feminino";
             this.rbFeminino.UseVisualStyleBackColor = true;
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(98, 9);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(19, 21);
+            this.lblId.TabIndex = 19;
+            this.lblId.Text = "0";
+            // 
+            // mtbCpf
+            // 
+            this.mtbCpf.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbCpf.Location = new System.Drawing.Point(12, 145);
+            this.mtbCpf.Mask = "999,999,999-99";
+            this.mtbCpf.Name = "mtbCpf";
+            this.mtbCpf.Size = new System.Drawing.Size(181, 29);
+            this.mtbCpf.TabIndex = 20;
+            // 
             // frmColaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(850, 416);
+            this.Controls.Add(this.mtbCpf);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.rbFeminino);
             this.Controls.Add(this.rbMasculino);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dgvColaboradores);
-            this.Controls.Add(this.lblId);
             this.Controls.Add(this.ckbProgramador);
             this.Controls.Add(this.txtCargo);
             this.Controls.Add(this.lblCargo);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.mtbSalario);
             this.Controls.Add(this.lblSalario);
-            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.label1);
             this.Name = "frmColaboradores";
             this.Text = "Colaboradores";
             this.Load += new System.EventHandler(this.frmColaboradores_Load);
@@ -327,20 +316,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label lblSalario;
         private System.Windows.Forms.MaskedTextBox mtbSalario;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.CheckBox ckbProgramador;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.DataGridView dgvColaboradores;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
@@ -353,5 +338,7 @@
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFeminino;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.MaskedTextBox mtbCpf;
     }
 }

@@ -34,7 +34,7 @@ namespace Principal
         {
             Colaborador colaborador = new Colaborador();
             colaborador.Nome = txtNome.Text;
-            colaborador.Cpf = txtCpf.Text;
+            colaborador.Cpf = mtbCpf.Text;
             colaborador.Salario = Convert.ToDecimal(mtbSalario.Text);
             if (rbFeminino.Checked == true)
             {
@@ -80,7 +80,7 @@ namespace Principal
             Colaborador colaborador = new Colaborador();
             colaborador.Id = Convert.ToInt32(lblId.Text);
             colaborador.Nome = txtNome.Text;
-            colaborador.Cpf = txtCpf.Text;
+            colaborador.Cpf = mtbCpf.Text;
             colaborador.Salario = Convert.ToDecimal(mtbSalario.Text);
             if (rbFeminino.Checked == true)
             {
@@ -90,7 +90,8 @@ namespace Principal
             {
                 colaborador.Sexo = rbMasculino.Text;
             }
-            if (ckbProgramador.Checked == true)
+            colaborador.Cargo = txtCargo.Text;
+            if (colaborador.Programador == "Sim")
             {
                 ckbProgramador.Checked = true;
             }
@@ -105,7 +106,7 @@ namespace Principal
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = "UPDATE colaboradores SET nome = @NOME, cpf = @CPF, salario = @SALARIO, saxo = @SEXO, cargo = @CARGO, programador = @PROGRAMADOR WHERE id = @ID";
+            comando.CommandText = "UPDATE colaboradores SET nome = @NOME, cpf = @CPF, salario = @SALARIO, sexo = @SEXO, cargo = @CARGO, programador = @PROGRAMADOR WHERE id = @ID";
             comando.Parameters.AddWithValue("@Id", colaborador.Id);
             comando.Parameters.AddWithValue("@NOME", colaborador.Nome);
             comando.Parameters.AddWithValue("@CPF", colaborador.Cpf);
@@ -114,6 +115,7 @@ namespace Principal
             comando.Parameters.AddWithValue("@CARGO", colaborador.Cargo);
             comando.Parameters.AddWithValue("@PROGRAMADOR", colaborador.Programador);
             comando.ExecuteNonQuery();
+
             LimparCampos();
             conexao.Close();
             AtualizarTabela();
@@ -123,7 +125,7 @@ namespace Principal
         {
             lblId.Text = "0";
             txtCargo.Clear();
-            txtCpf.Clear();
+            mtbCpf.Clear();
             txtNome.Clear();
             mtbSalario.Clear();
             if (rbMasculino.Checked == true)
@@ -165,8 +167,8 @@ namespace Principal
                 colaborador.Sexo = linha["sexo"].ToString();
                 colaborador.Cargo = linha["cargo"].ToString();
                 colaborador.Programador = linha["programador"].ToString();
-                dgvColaboradores.Rows.Add(new string[] { colaborador.Id.ToString(), colaborador.Nome, colaborador.Cargo,
-                    colaborador.Cpf,colaborador.Sexo, colaborador.Salario.ToString(), colaborador.Programador});
+                dgvColaboradores.Rows.Add(new string[] { colaborador.Id.ToString(), colaborador.Nome, colaborador.Cpf,
+                    colaborador.Salario.ToString(),colaborador.Sexo, colaborador.Cargo, colaborador.Programador});
             }
         }
 
@@ -231,7 +233,7 @@ namespace Principal
 
             lblId.Text = colaborador.Id.ToString();
             txtNome.Text = colaborador.Nome;
-            txtCpf.Text = colaborador.Cpf;
+            mtbCpf.Text = colaborador.Cpf;
             mtbSalario.Text = colaborador.Salario.ToString();
             if (colaborador.Sexo == "Feminino")
             {
