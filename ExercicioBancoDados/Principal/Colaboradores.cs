@@ -206,11 +206,50 @@ namespace Principal
 
         private void dgvColaboradores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            int id = Convert.ToInt32(dgvColaboradores.CurrentRow.Cells[0].Value);
+
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "SELECT id, nome, cpf, salario, sexo, cargo, programador FROM colaboradores WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            DataRow linha = tabela.Rows[0];
+            Colaborador colaborador = new Colaborador();
+            colaborador.Id = Convert.ToInt32(linha["id"]);
+            colaborador.Nome = linha["nome"].ToString();
+            colaborador.Cpf = linha["cpf"].ToString();
+            colaborador.Salario = Convert.ToDecimal(linha["salario"]);
+            colaborador.Sexo = linha["sexo"].ToString();
+            colaborador.Cargo = linha["cargo"].ToString();
+            colaborador.Programador = linha["programador"].ToString();
+
+            lblId.Text = colaborador.Id.ToString();
+            txtNome.Text = colaborador.Nome;
+            txtCpf.Text = colaborador.Cpf;
+            mtbSalario.Text = colaborador.Salario.ToString();
+            if (colaborador.Sexo == "Feminino")
+            {
+                rbFeminino.Checked = true;
+            }
+            else
+            {
+                rbMasculino.Checked = true;
+            }
+            txtCargo.Text = colaborador.Cargo;
+            if (colaborador.Programador == "Sim")
+            {
+                ckbProgramador.Checked = true;
+            }
+            else
+            {
+                ckbProgramador.Checked = false;
+            }
 
             conexao.Close();
         }
