@@ -47,11 +47,11 @@ namespace Principal
             colaborador.Cargo = txtCargo.Text;
             if (ckbProgramador.Checked == true)
             {
-                colaborador.Programador = "Sim";
+                colaborador.Programador = true;
             }
             else
             {
-                colaborador.Programador = "Não";
+                colaborador.Programador = false;
             }
 
             SqlConnection conexao = new SqlConnection();
@@ -91,13 +91,13 @@ namespace Principal
                 colaborador.Sexo = rbMasculino.Text;
             }
             colaborador.Cargo = txtCargo.Text;
-            if (colaborador.Programador == "Sim")
+            if (colaborador.Programador == true)
             {
-                ckbProgramador.Checked = true;
+                Convert.ToBoolean(ckbProgramador.Checked = true);
             }
             else
             {
-                ckbProgramador.Checked = false;
+                Convert.ToBoolean(ckbProgramador.Checked = false);
             }
 
             SqlConnection conexao = new SqlConnection();
@@ -166,9 +166,9 @@ namespace Principal
                 colaborador.Salario = Convert.ToDecimal(linha["salario"]);
                 colaborador.Sexo = linha["sexo"].ToString();
                 colaborador.Cargo = linha["cargo"].ToString();
-                colaborador.Programador = linha["programador"].ToString();
+                colaborador.Programador = Convert.ToBoolean(linha["programador"]);
                 dgvColaboradores.Rows.Add(new string[] { colaborador.Id.ToString(), colaborador.Nome, colaborador.Cpf,
-                    colaborador.Salario.ToString(),colaborador.Sexo, colaborador.Cargo, colaborador.Programador});
+                    colaborador.Salario.ToString(),colaborador.Sexo, colaborador.Cargo, colaborador.Programador.ToString()});
             }
         }
 
@@ -229,7 +229,7 @@ namespace Principal
             colaborador.Salario = Convert.ToDecimal(linha["salario"]);
             colaborador.Sexo = linha["sexo"].ToString();
             colaborador.Cargo = linha["cargo"].ToString();
-            colaborador.Programador = linha["programador"].ToString();
+            colaborador.Programador = Convert.ToBoolean(linha["programador"]);
 
             lblId.Text = colaborador.Id.ToString();
             txtNome.Text = colaborador.Nome;
@@ -244,7 +244,7 @@ namespace Principal
                 rbMasculino.Checked = true;
             }
             txtCargo.Text = colaborador.Cargo;
-            if (colaborador.Programador == "Sim")
+            if (colaborador.Programador == true)
             {
                 ckbProgramador.Checked = true;
             }

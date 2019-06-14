@@ -14,6 +14,6 @@ namespace Principal
         public decimal Salario;
         public string Sexo;
         public string Cargo;
-        public string Programador;
+        public bool Programador;
     }
 }
