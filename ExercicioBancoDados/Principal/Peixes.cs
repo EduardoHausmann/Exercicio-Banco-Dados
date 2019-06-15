@@ -39,7 +39,7 @@ namespace Principal
             peixe.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Peixe.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -67,7 +67,7 @@ namespace Principal
             peixe.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Peixe.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -80,6 +80,7 @@ namespace Principal
             comando.Parameters.AddWithValue("@QUANTIDADE", peixe.Quantidade);
             comando.ExecuteNonQuery();
 
+            MessageBox.Show("Alterado com Sucessso");
             LimparCampos();
             conexao.Close();
             AtualizarTabela();
@@ -97,7 +98,7 @@ namespace Principal
         private void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Peixe.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -141,7 +142,7 @@ namespace Principal
             if (caixaDialogo == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Peixe.mdf;Integrated Security=True;Connect Timeout=30";
                 conexao.Open();
 
                 SqlCommand comando = new SqlCommand();
@@ -152,6 +153,7 @@ namespace Principal
                 comando.Parameters.AddWithValue("@ID", id);
                 comando.ExecuteNonQuery();
 
+                MessageBox.Show("Apagado com Sucesso");
                 conexao.Close();
                 AtualizarTabela();
             }
@@ -162,7 +164,7 @@ namespace Principal
             int id = Convert.ToInt32(dgvPeixes.CurrentRow.Cells[0].Value); 
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Peixes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Peixe.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();

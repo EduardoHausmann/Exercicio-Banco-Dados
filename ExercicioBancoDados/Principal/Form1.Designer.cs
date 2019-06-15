@@ -70,10 +70,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(644, 151);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnColaboradores);
             this.Controls.Add(this.btnPeixes);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.Text = "Principal";
             this.ResumeLayout(false);

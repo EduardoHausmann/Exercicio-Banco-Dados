@@ -306,6 +306,8 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblCodigo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmColaboradores";
             this.Text = "Colaboradores";
             this.Load += new System.EventHandler(this.frmColaboradores_Load);

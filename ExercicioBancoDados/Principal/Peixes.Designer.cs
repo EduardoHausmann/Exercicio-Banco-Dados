@@ -246,6 +246,8 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblCodigo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPeixes";
             this.Text = "Peixes";
             this.Load += new System.EventHandler(this.frmPeixes_Load);

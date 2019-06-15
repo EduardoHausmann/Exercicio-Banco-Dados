@@ -55,7 +55,7 @@ namespace Principal
             }
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -93,15 +93,15 @@ namespace Principal
             colaborador.Cargo = txtCargo.Text;
             if (colaborador.Programador == true)
             {
-                Convert.ToBoolean(ckbProgramador.Checked = true);
+                colaborador.Programador = Convert.ToBoolean(ckbProgramador.Checked = true);
             }
             else
             {
-                Convert.ToBoolean(ckbProgramador.Checked = false);
+                colaborador.Programador = Convert.ToBoolean(ckbProgramador.Checked = false);
             }
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -116,9 +116,10 @@ namespace Principal
             comando.Parameters.AddWithValue("@PROGRAMADOR", colaborador.Programador);
             comando.ExecuteNonQuery();
 
+            MessageBox.Show("Alterado com Sucesso");
+            AtualizarTabela();
             LimparCampos();
             conexao.Close();
-            AtualizarTabela();
         }
 
         private void LimparCampos()
@@ -145,7 +146,7 @@ namespace Principal
         private void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -190,7 +191,7 @@ namespace Principal
             if (caixaDialogo == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
                 conexao.Open();
 
                 SqlCommand comando = new SqlCommand();
@@ -201,6 +202,7 @@ namespace Principal
                 comando.Parameters.AddWithValue("@ID", id);
                 comando.ExecuteNonQuery();
 
+                MessageBox.Show("Apagado com Sucesso");
                 conexao.Close();
                 AtualizarTabela();
             }
@@ -211,7 +213,7 @@ namespace Principal
             int id = Convert.ToInt32(dgvColaboradores.CurrentRow.Cells[0].Value);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
