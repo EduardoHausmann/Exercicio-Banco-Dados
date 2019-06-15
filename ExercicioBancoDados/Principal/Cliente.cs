@@ -10,7 +10,7 @@ namespace Principal
     {
         public int Id;
         public string Nome;
-        public decimal Salda;
+        public decimal Saldo;
         public string Telefone;
         public string Estado;
         public string Cidade;
@@ -19,7 +19,7 @@ namespace Principal
         public string Logradouro;
         public int Numero;
         public string Complemento;
-        public bool Nome_Sujo;
+        public bool NomeSujo;
         public decimal Altura;
         public decimal Peso;
     }

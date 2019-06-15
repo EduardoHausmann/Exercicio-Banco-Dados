@@ -93,11 +93,11 @@ namespace Principal
             colaborador.Cargo = txtCargo.Text;
             if (colaborador.Programador == true)
             {
-                colaborador.Programador = Convert.ToBoolean(ckbProgramador.Checked = true);
+                ckbProgramador.Checked = true;
             }
             else
             {
-                colaborador.Programador = Convert.ToBoolean(ckbProgramador.Checked = false);
+                ckbProgramador.Checked = false;
             }
 
             SqlConnection conexao = new SqlConnection();
@@ -183,7 +183,7 @@ namespace Principal
             if (dgvColaboradores.Rows.Count == 0)
             {
                 MessageBox.Show("Registre um Colaborador");
-                return; 
+                return;
             }
 
             DialogResult caixaDialogo = MessageBox.Show("Desejá realmente Apagar", "AVISO", MessageBoxButtons.YesNo);

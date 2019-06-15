@@ -58,6 +58,20 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnLogradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnComplemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome_Sujo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -333,13 +347,119 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnNome,
+            this.ColumnSaldo,
+            this.ColumnTelefone,
+            this.ColumnEstado,
+            this.ColumnCidade,
+            this.ColumnBairro,
+            this.ColumnCep,
+            this.ColumnLogradouro,
+            this.ColumnNumero,
+            this.ColumnComplemento,
+            this.ColumnNome_Sujo,
+            this.ColumnAltura,
+            this.ColumnPeso});
             this.dgvClientes.Location = new System.Drawing.Point(12, 296);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(991, 202);
             this.dgvClientes.TabIndex = 29;
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Código";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 50;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnSaldo
+            // 
+            this.ColumnSaldo.HeaderText = "Saldo";
+            this.ColumnSaldo.Name = "ColumnSaldo";
+            this.ColumnSaldo.ReadOnly = true;
+            // 
+            // ColumnTelefone
+            // 
+            this.ColumnTelefone.HeaderText = "Telefone";
+            this.ColumnTelefone.Name = "ColumnTelefone";
+            this.ColumnTelefone.ReadOnly = true;
+            // 
+            // ColumnEstado
+            // 
+            this.ColumnEstado.HeaderText = "Estado";
+            this.ColumnEstado.Name = "ColumnEstado";
+            this.ColumnEstado.ReadOnly = true;
+            // 
+            // ColumnCidade
+            // 
+            this.ColumnCidade.HeaderText = "Cidade";
+            this.ColumnCidade.Name = "ColumnCidade";
+            this.ColumnCidade.ReadOnly = true;
+            // 
+            // ColumnBairro
+            // 
+            this.ColumnBairro.HeaderText = "Bairro";
+            this.ColumnBairro.Name = "ColumnBairro";
+            this.ColumnBairro.ReadOnly = true;
+            // 
+            // ColumnCep
+            // 
+            this.ColumnCep.HeaderText = "CEP";
+            this.ColumnCep.Name = "ColumnCep";
+            this.ColumnCep.ReadOnly = true;
+            // 
+            // ColumnLogradouro
+            // 
+            this.ColumnLogradouro.HeaderText = "Logradouro";
+            this.ColumnLogradouro.Name = "ColumnLogradouro";
+            this.ColumnLogradouro.ReadOnly = true;
+            // 
+            // ColumnNumero
+            // 
+            this.ColumnNumero.HeaderText = "Número";
+            this.ColumnNumero.Name = "ColumnNumero";
+            this.ColumnNumero.ReadOnly = true;
+            this.ColumnNumero.Width = 75;
+            // 
+            // ColumnComplemento
+            // 
+            this.ColumnComplemento.HeaderText = "Complemento";
+            this.ColumnComplemento.Name = "ColumnComplemento";
+            this.ColumnComplemento.ReadOnly = true;
+            // 
+            // ColumnNome_Sujo
+            // 
+            this.ColumnNome_Sujo.HeaderText = "Nome Sujo ";
+            this.ColumnNome_Sujo.Name = "ColumnNome_Sujo";
+            this.ColumnNome_Sujo.ReadOnly = true;
+            // 
+            // ColumnAltura
+            // 
+            this.ColumnAltura.HeaderText = "Altura";
+            this.ColumnAltura.Name = "ColumnAltura";
+            this.ColumnAltura.ReadOnly = true;
+            this.ColumnAltura.Width = 75;
+            // 
+            // ColumnPeso
+            // 
+            this.ColumnPeso.HeaderText = "Peso";
+            this.ColumnPeso.Name = "ColumnPeso";
+            this.ColumnPeso.ReadOnly = true;
+            this.ColumnPeso.Width = 75;
             // 
             // frmClientes
             // 
@@ -420,5 +540,19 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSaldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLogradouro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnComplemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome_Sujo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAltura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPeso;
     }
 }
