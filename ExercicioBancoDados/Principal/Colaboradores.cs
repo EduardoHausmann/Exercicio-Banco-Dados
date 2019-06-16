@@ -117,9 +117,9 @@ namespace Principal
             comando.ExecuteNonQuery();
 
             MessageBox.Show("Alterado com Sucesso");
-            AtualizarTabela();
             LimparCampos();
             conexao.Close();
+            AtualizarTabela();
         }
 
         private void LimparCampos()

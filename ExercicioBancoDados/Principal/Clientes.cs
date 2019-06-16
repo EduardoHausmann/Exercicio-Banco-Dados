@@ -171,6 +171,7 @@ namespace Principal
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
 
+            dgvClientes.RowCount = 0;
             for (int i = 0; i < tabela.Rows.Count; i++)
             {
                 DataRow linha = tabela.Rows[i];
@@ -196,12 +197,90 @@ namespace Principal
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
+            if (dgvClientes.Rows.Count == 0)
+            {
+                MessageBox.Show("Registre um Cliente");
+                return;
+            }
+
+            DialogResult caixaDialogo = MessageBox.Show("Deseja realmente Apagar", "AVISO!", MessageBoxButtons.YesNo);
+
+            if (caixaDialogo == DialogResult.Yes)
+            {
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Clientes.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.Open();
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexao;
+                comando.CommandText = "DELETE FROM clientes WHERE id = @ID";
+
+                int id = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
+                comando.Parameters.AddWithValue("@ID", id);
+                comando.ExecuteNonQuery();
+
+                MessageBox.Show("Apagado com Sucesso");
+                conexao.Close();
+                AtualizarTabela();
+            }
 
         }
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            int id = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
 
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Clientes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "SELECT id, nome, saldo, telefone, estado, cidade, bairro, cep, logradouro, numero, complemento, nome_Sujo, altura, peso FROM clientes WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            DataRow linha = tabela.Rows[0];
+            Cliente cliente = new Cliente();
+            cliente.Id = Convert.ToInt32(linha["id"]);
+            cliente.Nome = linha["nome"].ToString();
+            cliente.Saldo = Convert.ToDecimal(linha["saldo"]);
+            cliente.Telefone = linha["telefone"].ToString();
+            cliente.Estado = linha["estado"].ToString();
+            cliente.Cidade = linha["cidade"].ToString();
+            cliente.Bairro = linha["bairro"].ToString();
+            cliente.Cep = linha["cep"].ToString();
+            cliente.Logradouro = linha["logradouro"].ToString();
+            cliente.Numero = Convert.ToInt32(linha["numero"]);
+            cliente.Complemento = linha["complemento"].ToString();
+            cliente.NomeSujo = Convert.ToBoolean(linha["nome_Sujo"]);
+            cliente.Altura = Convert.ToDecimal(linha["altura"]);
+            cliente.Peso = Convert.ToDecimal(linha["peso"]);
+
+            lblId.Text = cliente.Id.ToString();
+            txtNome.Text = cliente.Nome;
+            mtbSaldo.Text = cliente.Saldo.ToString();
+            mtbTelefone.Text = cliente.Telefone;
+            txtEstado.Text = cliente.Estado;
+            txtCidade.Text = cliente.Cidade;
+            txtBairro.Text = cliente.Bairro;
+            txtCep.Text = cliente.Cep;
+            txtLogradouro.Text = cliente.Logradouro;
+            txtNumero.Text = cliente.Numero.ToString();
+            rtbComplemento.Text = cliente.Complemento;
+            if (cliente.NomeSujo == true)
+            {
+                ckbNomeSujo.Checked = true;
+            }
+            else
+            {
+                ckbNomeSujo.Checked = false;
+            }
+            txtAltura.Text = cliente.Altura.ToString();
+            txtPeso.Text = cliente.Peso.ToString();
+
+            conexao.Close();
         }
 
         private void frmClientes_Load(object sender, EventArgs e)

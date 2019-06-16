@@ -145,6 +145,7 @@
             // 
             this.mtbTelefone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbTelefone.Location = new System.Drawing.Point(713, 56);
+            this.mtbTelefone.Mask = "(99)9999-9999";
             this.mtbTelefone.Name = "mtbTelefone";
             this.mtbTelefone.Size = new System.Drawing.Size(193, 29);
             this.mtbTelefone.TabIndex = 7;
