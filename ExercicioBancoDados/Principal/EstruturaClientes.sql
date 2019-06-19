@@ -14,7 +14,6 @@ CREATE TABLE clientes(
 	nome_sujo BIT,
 	altura DECIMAL(3,2),
 	peso DECIMAL(5,2)
-	
 );
 
 SELECT * FROM clientes;

@@ -404,6 +404,7 @@
             this.ColumnEstado.HeaderText = "Estado";
             this.ColumnEstado.Name = "ColumnEstado";
             this.ColumnEstado.ReadOnly = true;
+            this.ColumnEstado.Width = 75;
             // 
             // ColumnCidade
             // 
@@ -441,6 +442,7 @@
             this.ColumnComplemento.HeaderText = "Complemento";
             this.ColumnComplemento.Name = "ColumnComplemento";
             this.ColumnComplemento.ReadOnly = true;
+            this.ColumnComplemento.Width = 150;
             // 
             // ColumnNome_Sujo
             // 
@@ -467,7 +469,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1015, 498);
+            this.ClientSize = new System.Drawing.Size(1012, 511);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnSalvar);

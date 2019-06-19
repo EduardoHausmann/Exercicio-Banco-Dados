@@ -40,22 +40,20 @@ namespace Principal
             {
                 colaborador.Sexo = rbFeminino.Text;
             }
-            else
+            else if (rbMasculino.Checked == true)
             {
                 colaborador.Sexo = rbMasculino.Text;
             }
-            colaborador.Cargo = txtCargo.Text;
-            if (ckbProgramador.Checked == true)
-            {
-                colaborador.Programador = true;
-            }
             else
             {
-                colaborador.Programador = false;
+                MessageBox.Show("Informe o Sexo");
+                return;
             }
+            colaborador.Cargo = txtCargo.Text;
+            colaborador.Programador = ckbProgramador.Checked;
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -91,17 +89,10 @@ namespace Principal
                 colaborador.Sexo = rbMasculino.Text;
             }
             colaborador.Cargo = txtCargo.Text;
-            if (colaborador.Programador == true)
-            {
-                ckbProgramador.Checked = true;
-            }
-            else
-            {
-                ckbProgramador.Checked = false;
-            }
+            colaborador.Programador = ckbProgramador.Checked;
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -146,7 +137,7 @@ namespace Principal
         private void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -191,7 +182,7 @@ namespace Principal
             if (caixaDialogo == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
                 conexao.Open();
 
                 SqlCommand comando = new SqlCommand();
@@ -213,7 +204,7 @@ namespace Principal
             int id = Convert.ToInt32(dgvColaboradores.CurrentRow.Cells[0].Value);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Colaboradores.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
