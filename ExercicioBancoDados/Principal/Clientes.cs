@@ -54,7 +54,7 @@ namespace Principal
             cliente.Peso = Convert.ToDecimal(txtPeso.Text);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Clientes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Eduardo.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -108,7 +108,7 @@ namespace Principal
             cliente.Peso = Convert.ToDecimal(txtPeso.Text);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Clientes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Eduardo.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -161,7 +161,7 @@ namespace Principal
         private void AtualizarTabela()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Clientes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Eduardo.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -208,7 +208,7 @@ namespace Principal
             if (caixaDialogo == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
-                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Clientes.mdf;Integrated Security=True;Connect Timeout=30";
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Eduardo.mdf;Integrated Security=True;Connect Timeout=30";
                 conexao.Open();
 
                 SqlCommand comando = new SqlCommand();
@@ -231,7 +231,7 @@ namespace Principal
             int id = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Clientes.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Eduardo.mdf;Integrated Security=True;Connect Timeout=30";
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
