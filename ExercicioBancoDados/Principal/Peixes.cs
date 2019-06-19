@@ -96,6 +96,7 @@ namespace Principal
         }
 
         private void AtualizarTabela()
+
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Eduardo.mdf;Integrated Security=True;Connect Timeout=30";

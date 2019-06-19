@@ -40,12 +40,12 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
             this.dgvPeixes = new System.Windows.Forms.DataGridView();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeixes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,6 +186,14 @@
             this.dgvPeixes.TabIndex = 11;
             this.dgvPeixes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeixes_CellDoubleClick);
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidade.Location = new System.Drawing.Point(12, 275);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(164, 29);
+            this.txtQuantidade.TabIndex = 12;
+            // 
             // ColumnId
             // 
             this.ColumnId.HeaderText = "Código";
@@ -218,14 +226,6 @@
             this.ColumnQuantidade.Name = "ColumnQuantidade";
             this.ColumnQuantidade.ReadOnly = true;
             this.ColumnQuantidade.Width = 75;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantidade.Location = new System.Drawing.Point(12, 275);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(164, 29);
-            this.txtQuantidade.TabIndex = 12;
             // 
             // frmPeixes
             // 
@@ -271,11 +271,11 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.DataGridView dgvPeixes;
+        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRaca;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
-        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }

@@ -177,7 +177,7 @@ namespace Principal
                 return;
             }
 
-            DialogResult caixaDialogo = MessageBox.Show("Desejá realmente Apagar", "AVISO", MessageBoxButtons.YesNo);
+            DialogResult caixaDialogo = MessageBox.Show("Desejá realmente Apagar?", "AVISO", MessageBoxButtons.YesNo);
 
             if (caixaDialogo == DialogResult.Yes)
             {
