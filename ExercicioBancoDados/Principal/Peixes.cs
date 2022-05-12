@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Principal
@@ -85,7 +79,7 @@ namespace Principal
             conexao.Close();
             AtualizarTabela();
         }
-        
+
         private void LimparCampos()
         {
             lblId.Text = "0";
@@ -162,7 +156,7 @@ namespace Principal
 
         private void dgvPeixes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = Convert.ToInt32(dgvPeixes.CurrentRow.Cells[0].Value); 
+            int id = Convert.ToInt32(dgvPeixes.CurrentRow.Cells[0].Value);
 
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Eduardo.mdf;Integrated Security=True;Connect Timeout=30";
